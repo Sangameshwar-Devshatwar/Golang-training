@@ -1,0 +1,8 @@
+**fmt package:--
+(1)fmt.Println("hello welcome to golang")
+--this function prints the text as it is
+
+(2)fmt.Printf("%d. hello budddy",2)":
+--this function print text with formatting value
+
+(3)fmt.fprint()

@@ -1,0 +1,111 @@
+switch case:example
+package main
+
+import (
+	"fmt"
+	"math/rand"
+)
+
+func main() {
+	diceNumber := rand.Intn(6) + 1 //rand is inbuld func whuch will generate random no.
+	fmt.Println(diceNumber)
+	switch diceNumber {
+	case 1:
+		fmt.Println("dice value is 1")
+	case 2:
+		fmt.Println("dice value is 2")
+	case 3:
+		fmt.Println("dice value is 3")
+        fallthrough
+	case 4:
+		fmt.Println("dice value is 4")
+        fallthrough
+	case 5:
+		fmt.Println("dice value is 5")
+	case 6:
+		fmt.Println("dice value is 6")
+
+	}
+}
+-- The most important thing in golang is inheritance is not there and no concepts of super or parent
+
+--fallthrough:- It is used in switch case to if i mentioned fallthrough at the 
+end of anycase the case next to that case will get automatically executed.
+
+--structs in Golang-:
+example:-package main
+
+import "fmt"
+
+func main() {
+	details := User{"sangameshwar", "sangam@123", 9421379450, 25}
+	fmt.Println("User details are :-", details)
+	fmt.Printf("User details are :%+v\n", details) //%+v will print data as per naming convention given in user struct like key value pairs but we have to use printf to print
+}
+
+type User struct { //struct data of user
+	Username string
+	Email    string
+	Mobile   int
+	Age      int
+}
+-- important point for struct use first letter as a capital while declaring struct elements
+
+
+--Arrays in Golang:-
+Arrays are not that much used in golang but most of the times slices are used hugely ib golang
+
+example:package main
+
+import "fmt"
+func main() {
+	var countryList [4]string //declared array of length 4 of type String
+	countryList[0] = "India"
+	countryList[1] = "America"
+	countryList[2] = "Russia"
+	countryList[3] = "United Kingdom"
+	fmt.Println("list of countries are as follows", countryList)
+	fmt.Println("length of the coutrylist array is ", len(countryList))       // len() is a inbuild func to get the length of given array
+	var cityNames = [5]string{"latur", "nanded", "pune", "bombay", "Lonavla"} //we can declare array like this also
+	fmt.Println("the list of the cities are as", cityNames)
+}
+
+
+slices in golang:-
+--this is used mostly in go 
+--In slices we dont need to give size to store according to size and that is the advantage of slices
+--In slices we can use inbuild append method to append the elements at the end of the slices
+--by using append(slicename,[anyno])we can access elements from that index and elemets before that will not come
+example:- 
+package main
+
+import "fmt"
+
+func main() {
+	var fruitList = []string{"mango", "banana", "peach", "coconut", "pineapple"}
+	fmt.Println("fruitlis is", fruitList)
+	fruitList = append(fruitList[1:])
+	fmt.Println("fruitlis is", fruitList)
+	fruitList = append(fruitList, "guava", "apple", "watermelon")
+	fmt.Println("fruitlis is", fruitList)
+	fruitList = (fruitList[3:])
+	fmt.Println("fruitlis is", fruitList)
+	fruitList=append(fruitlist[2:4]) //this will return element including from 2 to 3 only 
+
+
+	highscores := make([]int, 4)// this will make slice of size 4 and if you try to add element beyond size given it will throw error 
+	highscores[0] = 333
+	highscores[1] = 350
+	highscores[2] = 456
+	highscores[3] = 667
+	fmt.Println(highscores)
+	highscores = append(highscores, 567, 45, 789, 980, 345)//but by using append we can add elements to slices here 
+	fmt.Println(highscores)
+}
+
+
+
+
+
+
+

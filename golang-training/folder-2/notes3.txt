@@ -1,0 +1,29 @@
+golang notes:-
+**Memory management in golang
+1.memory allocation and deallocation happens automatically in golang
+--new():-(1)Allocates memory but no init
+        (2)you will get a memory address
+        (3)zeroed storage   
+--make():-(1)allocates memory and init
+        (2)you will get a memory address 
+        (3)Non zeroed value        
+
+--Garbage collection happens automatically
+
+**functions in golang:--
+uu cant write functions inside funcions uuu will get error
+example for function usage:--
+package main
+
+import "fmt"
+
+func main() {
+	fmt.Println("inside main function")
+	greet()
+}
+func greet() {
+	fmt.Println("Inside greet function")
+	c := 2 + 3
+	fmt.Println(c)
+}
+        

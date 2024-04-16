@@ -1,0 +1,4 @@
+slices have 3 inbuild methods as follows:
+-->len()
+-->copy()
+-->append()
